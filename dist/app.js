@@ -22,7 +22,7 @@
     $$(".nav-item").forEach(el=>el.classList.toggle("active",el.dataset.view===view));
     const names={home:"總覽",papers:"歷屆試題",practice:"題庫練習",quiz:"隨機測驗",exam:"正式考場",mock:"模擬試題"};
     $("#crumb-current").textContent=names[view]; history.replaceState(null,"","#"+view); window.scrollTo({top:0,behavior:"smooth"});
-    if(view==="papers") renderPapers(); if(view==="practice") renderPractice(); if(view==="exam") renderExams(); if(view==="quiz") updateQuizAvailable();
+    if(view==="papers") renderPapers(); if(view==="practice") renderPractice(); if(view==="exam") renderExams(); if(view==="quiz") updateQuizAvailable(); if(view==="mock") updateMockAvailable();
   }
   document.addEventListener("click",e=>{
     const goButton=e.target.closest("[data-go]"); if(goButton){e.preventDefault();go(goButton.dataset.go);return;}
