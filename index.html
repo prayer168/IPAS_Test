@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#102a43" />
+  <meta name="description" content="iPAS AI 應用規劃師歷屆試題索引、分類練習、隨機測驗與模擬考場。" />
+  <title>iPAS AI 應用規劃師｜備考資料室</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="data/metadata.js"></script>
+  <script defer src="data/questions.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <div class="site-shell">
+    <aside class="sidebar">
+      <a class="brand" href="#home" aria-label="iPAS 備考資料室首頁">
+        <span class="brand-mark"><span></span><span></span><span></span></span>
+        <span><strong>iPAS</strong><small>AI STUDY DESK</small></span>
+      </a>
+      <div class="side-label">準備認證</div>
+      <nav class="side-nav" aria-label="主要導覽">
+        <a class="nav-item active" href="#home" data-view="home"><span class="nav-icon">⌂</span>總覽</a>
+        <a class="nav-item" href="#papers" data-view="papers"><span class="nav-icon">▤</span>歷屆試題<span class="nav-count">14</span></a>
+        <a class="nav-item" href="#practice" data-view="practice"><span class="nav-icon">✳</span>題庫練習</a>
+        <a class="nav-item" href="#quiz" data-view="quiz"><span class="nav-icon">◷</span>隨機測驗</a>
+        <a class="nav-item" href="#exam" data-view="exam"><span class="nav-icon">▣</span>正式考場</a>
+        <a class="nav-item" href="#mock" data-view="mock"><span class="nav-icon">✦</span>模擬試題</a>
+      </nav>
+      <div class="side-bottom">
+        <div class="sidebar-note"><span class="status-dot"></span><div><b>題庫持續整理中</b><small>答案與解析逐題校對</small></div></div>
+        <div class="sidebar-footer"><span>個人備考工作台</span><span>v0.1</span></div>
+      </div>
+    </aside>
+
+    <main class="main-area" id="main">
+      <header class="topbar">
+        <div class="breadcrumb"><span>備考工作台</span><i>/</i><b id="crumb-current">總覽</b></div>
+        <div class="top-actions"><span class="today-date" id="today-date"></span><button class="avatar" aria-label="個人資料">林</button></div>
+      </header>
+
+      <section class="view active" id="view-home">
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <div class="eyebrow"><span class="eyebrow-line"></span>YOUR CERTIFICATION, ORGANIZED</div>
+            <h1>把每次練習<br><em>變成真正的進步。</em></h1>
+            <p>歷屆試題、主題練習與模擬測驗，整理在同一個備考空間。</p>
+            <div class="hero-actions"><button class="button button-primary" data-go="practice">開始練習 <span>↗</span></button><button class="button button-quiet" data-go="papers">瀏覽歷屆試題 <span>→</span></button></div>
+            <div class="hero-caption"><span class="mini-bars"><i></i><i></i><i></i><i></i><i></i><i></i></span><span>循序練習 · 看懂每個選項</span></div>
+          </div>
+          <div class="hero-art" aria-label="AI 備考學習概念圖">
+            <div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div>
+            <div class="art-core"><div class="core-top"><span>AI</span><span>LEARNING MAP</span></div><div class="core-network"><i></i><i></i><i></i><i></i><i></i><i></i><b></b></div><div class="core-bottom"><span>知識連結中</span><strong>01—05</strong></div></div>
+            <div class="float-tag tag-a"><b>01</b><span>AI 基礎</span></div><div class="float-tag tag-b"><b>02</b><span>生成式 AI</span></div><div class="float-tag tag-c"><b>03</b><span>大數據</span></div><div class="float-tag tag-d"><b>04</b><span>機器學習</span></div>
+            <div class="art-foot"><span>AI APPLICATION PLANNER</span><span>EST. 2026</span></div>
+          </div>
+        </div>
+
+        <div class="stats-row">
+          <div class="stat-card"><div class="stat-icon icon-sand">▤</div><div><span>官方歷屆試卷</span><strong>14 <small>份 PDF</small></strong></div><a href="#papers" data-go="papers" aria-label="查看試卷">↗</a></div>
+          <div class="stat-card"><div class="stat-icon icon-blue">✳</div><div><span>互動練習題</span><strong id="stat-question-count">16 <small>題已校對</small></strong></div><a href="#practice" data-go="practice" aria-label="開始練習">↗</a></div>
+          <div class="stat-card"><div class="stat-icon icon-green">◉</div><div><span>涵蓋認證等級</span><strong>初級 <small>＋</small> 中級</strong></div><span class="stat-tag">2 LEVELS</span></div>
+        </div>
+
+        <div class="section-heading"><div><div class="eyebrow"><span class="eyebrow-line"></span>CHOOSE YOUR ROUTE</div><h2>今天想怎麼準備？</h2></div><p>從目標出發，選擇適合現在的練習方式。</p></div>
+        <div class="route-grid">
+          <button class="route-card route-warm" data-go="practice"><span class="route-no">01 / PRACTICE</span><span class="route-symbol">✳</span><h3>主題練習</h3><p>依等級、年度與科目挑題，逐題作答並查看解題說明。</p><span class="route-link">挑選練習範圍 <b>↗</b></span></button>
+          <button class="route-card route-blue" data-go="quiz"><span class="route-no">02 / QUICK QUIZ</span><span class="route-symbol">◷</span><h3>隨機測驗</h3><p>選擇題數，系統隨機組卷；每次練習都有不同組合。</p><span class="route-link">建立一份測驗 <b>↗</b></span></button>
+          <button class="route-card route-dark" data-go="exam"><span class="route-no">03 / EXAM MODE</span><span class="route-symbol">▣</span><h3>正式考場</h3><p>按歷屆年度、梯次和科目作答，熟悉考試節奏與介面。</p><span class="route-link">進入考場設定 <b>↗</b></span></button>
+          <button class="route-card route-green" data-go="mock"><span class="route-no">04 / MOCK EXAM</span><span class="route-symbol">✦</span><h3>模擬試題</h3><p>以實際考試範圍設計全新題目，補足歷屆題目之外的練習。</p><span class="route-link">查看模擬測驗 <b>↗</b></span></button>
+        </div>
+        <div class="bottom-callout"><div><span class="callout-kicker">A NOTE FOR YOUR PREP</span><h3>不只記住答案，也理解為什麼。</h3><p>完成作答後會看到正確選項、考點說明，以及常見干擾選項的判斷方式。</p></div><div class="callout-mark">WHY<span>?</span></div><button class="button button-light" data-go="practice">閱讀解析 <span>→</span></button></div>
+        <footer class="page-footer"><span>內容來源：經濟部產業發展署 iPAS 公開歷屆試題</span><a href="https://ipd.nat.gov.tw/ipas/certification/AIAP/learning-resources" target="_blank" rel="noopener">官方學習資源 ↗</a></footer>
+      </section>
+
+      <section class="view" id="view-papers">
+        <div class="page-intro"><div class="eyebrow"><span class="eyebrow-line"></span>OFFICIAL ARCHIVE</div><h1>歷屆試題</h1><p>官方公告試題完整收錄，依等級、年度、梯次與科目整理。PDF 來源可供核對原始題目與答案。</p></div>
+        <div class="filter-bar"><label class="search-box"><span>⌕</span><input id="paper-search" type="search" placeholder="搜尋年度、科目或梯次" /></label><select id="paper-level"><option value="all">所有等級</option><option>初級</option><option>中級</option></select><select id="paper-year"><option value="all">所有年度</option><option>115</option><option>114</option></select><span class="result-count" id="paper-count"></span></div>
+        <div id="paper-groups" class="paper-groups"></div>
+      </section>
+
+      <section class="view" id="view-practice">
+        <div class="page-intro"><div class="eyebrow"><span class="eyebrow-line"></span>TOPIC PRACTICE</div><h1>題庫練習</h1><p>按等級、年度、科目與考點縮小範圍。作答後立即查看解析，釐清正確選項與干擾選項。</p></div>
+        <div class="practice-layout"><aside class="filters-panel"><div class="filter-title">篩選題目 <button id="clear-filters">清除</button></div><label>認證等級<select id="practice-level"><option value="all">全部等級</option><option>初級</option><option>中級</option></select></label><label>年度<select id="practice-year"><option value="all">全部年度</option><option>115</option><option>114</option></select></label><label>科目<select id="practice-subject"><option value="all">全部科目</option></select></label><label>考點關鍵字<input type="search" id="practice-topic" placeholder="例如：RAG、資料清理" /></label><div class="filter-hint"><b>題庫說明</b><p>目前顯示的是已結構化且附有解析的題目。完整官方試卷請至「歷屆試題」下載。</p></div></aside><div class="practice-main"><div class="practice-toolbar"><div><span class="eyebrow eyebrow-muted">AVAILABLE QUESTIONS</span><strong id="practice-results">載入中</strong></div><button class="button button-primary button-small" data-go="quiz">隨機抽題 <span>↗</span></button></div><div id="practice-list" class="question-list"></div></div></div>
+      </section>
+
+      <section class="view" id="view-quiz">
+        <div class="page-intro"><div class="eyebrow"><span class="eyebrow-line"></span>QUICK QUIZ</div><h1>隨機測驗</h1><p>設定範圍與題數，從已校對題庫隨機組合。交卷後檢視分數和每題解析。</p></div>
+        <div id="quiz-setup" class="setup-card"><div class="setup-heading"><div class="setup-icon">◷</div><div><h2>設定你的測驗</h2><p>每次開始都會重新隨機抽題。</p></div></div><div class="setup-fields"><label>認證等級<select id="quiz-level"><option value="all">初級＋中級</option><option>初級</option><option>中級</option></select></label><label>科目<select id="quiz-subject"><option value="all">全部科目</option></select></label><label>題目數量<select id="quiz-size"><option value="5">5 題</option><option value="10">10 題</option><option value="15">15 題</option><option value="20">20 題</option></select></label><label>作答方式<select id="quiz-mode"><option value="instant">逐題看解析</option><option value="end">交卷後看解析</option></select></label></div><div class="setup-bottom"><span id="quiz-available">可用題目：—</span><button class="button button-primary" id="start-quiz">開始隨機測驗 <span>→</span></button></div></div><div id="quiz-stage" class="quiz-stage" hidden></div>
+      </section>
+
+      <section class="view" id="view-exam">
+        <div class="page-intro"><div class="eyebrow"><span class="eyebrow-line"></span>OFFICIAL EXAM MODE</div><h1>正式考場</h1><p>挑選一份官方歷屆試卷進行限時作答。開始前可先查看可互動題數與 PDF 原卷。</p></div>
+        <div class="exam-layout"><div class="exam-list-wrap"><div class="exam-controls"><select id="exam-level"><option value="all">全部等級</option><option>初級</option><option>中級</option></select><select id="exam-year"><option value="all">全部年度</option><option>115</option><option>114</option></select></div><div id="exam-list" class="exam-list"></div></div><aside class="exam-aside"><div class="exam-aside-top">考試模式</div><div class="exam-clock">◷</div><h3>依照考試節奏<br>完成整份試卷</h3><ul><li>可設定作答時間</li><li>可標記待回看題目</li><li>交卷後查看答題結果與解析</li></ul><div class="exam-notice">題庫整理中。互動題數未達官方完整題數的試卷，將提供試作模式並明確標示進度。</div><a href="https://ipd.nat.gov.tw/ipas/certification/AIAP/learning-resources" target="_blank" rel="noopener">官方考試公告 ↗</a></aside></div><div id="exam-stage" class="quiz-stage" hidden></div>
+      </section>
+
+      <section class="view" id="view-mock">
+        <div class="page-intro"><div class="eyebrow"><span class="eyebrow-line"></span>MOCK EXAM</div><h1>模擬試題</h1><p>全新生成題可補充練習情境；為確保內容與標準一致，會明確和官方歷屆題區分。</p></div>
+        <div class="mock-banner"><div class="mock-stamp">AI<br>LAB</div><div><span class="eyebrow eyebrow-muted">NEW QUESTIONS · CLEARLY LABELED</span><h2>模擬題會怎麼設計？</h2><p>依官方科目和考綱範圍設計情境題，搭配標準答案、考點解析與干擾選項說明。生成題將標註為「模擬題」，並在人工檢視答案唯一性後才納入練習。</p></div></div>
+        <div class="mock-grid"><article><span>01</span><h3>按等級與科目出題</h3><p>先選初級或中級，再選科目與題量，題目以選擇題為主。</p></article><article><span>02</span><h3>解析與考點一起看</h3><p>每題說明正確答案依據，並指出其他選項容易混淆的概念。</p></article><article><span>03</span><h3>清楚標示題目來源</h3><p>官方題、模擬題分開呈現，練習紀錄也會註明題目類型。</p></article></div>
+        <div class="mock-ready"><div><span class="status-dot status-muted"></span><b>模擬題生成器尚未接入</b><p>第一版先備好模擬測驗規格與考場介面，待考綱題目藍圖確認後再加入可用題目。</p></div><button class="button button-quiet" data-go="practice">先練習已校對題目 <span>→</span></button></div>
+      </section>
+
+      <footer class="global-footer"><span>iPAS AI 應用規劃師備考資料室</span><span>內容以官方公告試題為來源；解析為學習輔助說明。</span></footer>
+    </main>
+  </div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
