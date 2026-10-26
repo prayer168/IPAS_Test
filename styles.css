@@ -44,6 +44,7 @@
 .filter-hint b{color:#3b554b}
 .filter-hint p,.paper-row p,.paper-meta,.setup-heading p,.setup-bottom>span,.exam-card p,.mock-banner p,.mock-grid p,.mock-ready p,.result-screen p,.hero-caption{color:#4d6066}
 .result-count{color:#30494f;background:#e5efed;border:1px solid #c1d0cd}
+.result-actions{flex-wrap:wrap}.result-actions .button{min-height:44px}.result-complete{display:inline-flex;align-items:center;min-height:44px;padding:0 8px;color:#216442;font-size:16px}
 .paper-group-head span:last-child,.qnum,.question-meta .qnum{color:#53666b}
 .level-pill,.tag{background:#e1eee8;color:#24563f;border:1px solid #c3d8ca}
 .tag.soft-blue{background:#e1edf3;color:#28576b;border-color:#c0d3dd}
